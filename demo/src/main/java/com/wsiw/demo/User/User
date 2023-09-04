@@ -1,1 +1,20 @@
-public class User{}
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "user")
+public class User{
+	@Id
+    @Column(name = "userName", unique = true, nullable = false)
+    private String userName;
+    
+    @Column(name = "password", nullable = false)
+    private String password;
+    
+    Public User(String userName, String password){
+    this.userName = userName;
+    this.password = password;
+    }
+}
